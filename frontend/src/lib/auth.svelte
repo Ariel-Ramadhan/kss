@@ -23,7 +23,7 @@
                 <form action="?/login" method="post">
                     <label for="chk" aria-hidden="true">{lin}</label>
                     <input type="text" name="username" placeholder="Username" required />
-                    <input class="text-red-500" type="password" name="password" placeholder="Password" required />
+                    <input type="password" name="password" placeholder="Password" required />
                     <button>{lin}</button>
                 </form>
             </div>

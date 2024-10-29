@@ -15,56 +15,56 @@
             <h1 class="">Welcome, {username}</h1>
         </div>
 
-        <div class="card">
-            <label for="l">Password</label>
-            <div class="textbox">{password}</div>
-            <label for="l">Password Encrypt</label>
-            <div class="textbox">{encrypted}</div>
-            <label for="l">Salt Value</label>
-            <div class="textbox">{salt}</div>
-            <label for="l">Hash Values</label>
-            <div class="textbox">{hash}</div>
-            <label for="l">Final Password</label>
-            <div class="textbox">{final}</div>
-        </div>
-
         <form method="POST" action="?/logout">
             <button>Logout</button>
         </form>
 
-        <div class="tree">
-            <ul>
-                <li>
-                    <a href="#">Password</a>
-                    <ul>
-                        <li>
-                            <ul>
-                                <li>
-                                    <a href="#">Password_Encrypt</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul>
-                                <ul>
-                                <li><a href="#">Salt_Value</a></li>
-                                <li>
-                                    <a href="#">Hash_Value</a>
-                                    <ul>
-                                        <li><a href="#">Hash_Salting</a>
-                                            <ul>
-                                                <li><a href="#">Final_Password</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="card">
+            <label for="l">Password</label>
+            <div class="textbox">{ password ? password : "Not set" }</div>
+            <label for="l">Password Encrypt</label>
+            <div class="textbox">{ encrypted ? encrypted : "Not set" }</div>
+            <label for="l">Salt Value</label>
+            <div class="textbox">{ salt ? salt : "Not set" }</div>
+            <label for="l">Hash Values</label>
+            <div class="textbox">{ hash ? hash : "Not set" }</div>
+            <label for="l">Final Password</label>
+            <div class="textbox">{ final ? final : "Not set" }</div>
         </div>
+
+        <!-- <div class="tree"> -->
+        <!--     <ul> -->
+        <!--         <li> -->
+        <!--             <a href="#">Password</a> -->
+        <!--             <ul> -->
+        <!--                 <li> -->
+        <!--                     <ul> -->
+        <!--                         <li> -->
+        <!--                             <a href="#">Password_Encrypt</a> -->
+        <!--                         </li> -->
+        <!--                     </ul> -->
+        <!--                 </li> -->
+        <!--                 <li> -->
+        <!--                     <ul> -->
+        <!--                         <ul> -->
+        <!--                         <li><a href="#">Salt_Value</a></li> -->
+        <!--                         <li> -->
+        <!--                             <a href="#">Hash_Value</a> -->
+        <!--                             <ul> -->
+        <!--                                 <li><a href="#">Hash_Salting</a> -->
+        <!--                                     <ul> -->
+        <!--                                         <li><a href="#">Final_Password</a> -->
+        <!--                                         </li> -->
+        <!--                                     </ul> -->
+        <!--                                 </li> -->
+        <!--                             </ul> -->
+        <!--                         </li> -->
+        <!--                     </ul> -->
+        <!--                 </li> -->
+        <!--             </ul> -->
+        <!--         </li> -->
+        <!--     </ul> -->
+        <!-- </div> -->
     </div>
 
     
@@ -73,6 +73,10 @@
 <style>
     body{
         background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    }
+
+    form {
+        padding: 10px;
     }
 
     button{
@@ -94,13 +98,10 @@
 
     .card{
         z-index: 2;
-        position: absolute;
         display: flex;
         flex-flow: column nowrap;
-
-        justify-content: left;
-        padding-top: 5%;
-        padding-left: 4%;
+        justify-content: center;
+        padding: 1% 5%;
         box-sizing: border-box;
         font-weight: bold;
         font-family: 'Jost', sans-serif;
@@ -112,14 +113,15 @@
     
     .textbox{
         background-color: #eee;
-        padding: 9px;
+        padding: 12px;
         margin: 7px;
         color: #573b8a;
         font-size: 1.3em;
         font-weight: bold;
         font-family: 'Jost', sans-serif;
-        width: 635px;
+        /* width: 635px; */
         border-radius: 10px;
+        overflow: scroll;
     }
     label{
         color: #fff;
